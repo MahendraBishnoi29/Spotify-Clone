@@ -1,4 +1,26 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500&family=Karla:wght@300;400;500&display=swap");
+
+@layer base {
+  body {
+    @apply bg-black scrollbar-hide;
+  }
+}
+
+@layer components {
+  .sidebarIcon {
+    @apply h-6 text-[#808080] cursor-pointer;
+  }
+
+  .tag {
+    @apply py-1.5 px-3 text-[#cecece] bg-[#282828] rounded-xl text-xs font-bold border-2 border-[#484848];
+  }
+}
+
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -13,4 +35,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
+} */
