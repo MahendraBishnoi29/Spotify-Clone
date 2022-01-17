@@ -1,20 +1,22 @@
-import { getProviders, useSession } from "next-auth/react";
+import { getProviders, signIn, useSession } from "next-auth/react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Loader from "../components/Loader";
 
 function Signin({ providers }) {
   const { data: session } = useSession();
 
   const router = useRouter();
-  const SignIn = () => {};
 
   useEffect(() => {
     if (session) {
       router.push("/");
     }
   }, [session, router]);
+
+  if (session) return <Loader />;
 
   return (
     <div className="bg-black h-screen flex flex-col items-center pt-24 space-y-8">
@@ -35,7 +37,7 @@ function Signin({ providers }) {
       {Object.values(providers).map((provider) => (
         <div key={provider.id}>
           <button
-            onClick={SignIn}
+            onClick={() => signIn(provider.id)}
             className="text-white py-4 px-6 rounded-full bg-[#1db954] transition duration-300 ease-out border border-transparent uppercase font-bold text-xs md:text-base tracking-wider hover:scale-105 hover:bg-[#0db146]"
           >
             LogIn With {provider.name}
