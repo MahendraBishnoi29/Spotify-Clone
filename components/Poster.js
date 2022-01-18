@@ -9,6 +9,9 @@ function Poster({ track, chooseTrack }) {
 
   const handlePlay = () => {
     chooseTrack(track);
+    if (track.uri === playingTrack.uri) {
+      setPlay(!play);
+    }
   };
 
   return (
@@ -24,8 +27,16 @@ function Poster({ track, chooseTrack }) {
 
       <div className="absolute bottom-10 inset-x-0 ml-4 flex items-center space-x-3.5">
         <div className="h-12 w-12 bg-[#15883e] rounded-full flex items-center justify-center group-hover:bg-[#1db954] flex-shrink-0">
-          {/* <BsFillPauseFill className="text-xl" /> */}
-          <BsFillPlayFill className="text-xl ml-[1px]" />
+          {track.uri === playingTrack.uri && play ? (
+            <BsFillPauseFill className="text-xl" />
+          ) : (
+            <BsFillPlayFill className="text-xl ml-[1px]" />
+          )}
+        </div>
+
+        <div className="text-[20px]">
+          <h4 className="font-extrabold truncate w-44"> {track.title} </h4>
+          <h6>{track.artist}</h6>
         </div>
       </div>
     </div>
