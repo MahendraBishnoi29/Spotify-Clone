@@ -20,7 +20,7 @@ function Dashboard() {
     <main className="flex min-h-screen min-w-max bg-black lg:pb-24">
       <Sidebar />
       <Body spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
-      <Right />
+      <Right spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
     </main>
   );
 }
