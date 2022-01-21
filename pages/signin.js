@@ -10,6 +10,7 @@ function Signin({ providers }) {
 
   const router = useRouter();
 
+  //Session
   useEffect(() => {
     if (session) {
       router.push("/");
