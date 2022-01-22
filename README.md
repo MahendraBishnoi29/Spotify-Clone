@@ -12,9 +12,10 @@ Will Host Soon....
 
 ## Features
 
-1. You Can Search For Any Song.
-2. It Has All The Features Like Original Spotify Such As Play Pause, Drag And Forward, Repeat etc.
-3. It Will Show Your All The Recently Played Songs.
+1. Login And LogOut Using Official Spotify Auth API.
+2. You Can Search For Any Song.
+3. It Has All The Features Like Original Spotify Such As Play Pause, Drag And Forward, Repeat etc.
+4. It Will Show Your All The Recently Played Songs.
 
 ## Working On These Now
 
